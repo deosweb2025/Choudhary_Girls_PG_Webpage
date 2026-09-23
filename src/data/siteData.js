@@ -1,3 +1,10 @@
+import heroRoom from '../assets/hero_room.jpg';
+import heroLounge from '../assets/hero_lounge.jpg';
+import heroDining from '../assets/hero_dining.jpg';
+import gallery1 from '../assets/gallery_1.jpg';
+import gallery2 from '../assets/gallery_2.jpg';
+import gallery3 from '../assets/gallery_3.jpg';
+
 export const siteData = {
   company: {
     name: "Choudhary Girls PG",
@@ -26,12 +33,12 @@ export const siteData = {
     description: "Premium, safe, and luxurious accommodation for women in the heart of Rajarhat, Kolkata.",
     primaryCTA: "Book a Room",
     secondaryCTA: "View Gallery",
-    images: ["/src/assets/hero_room.jpg", "/src/assets/hero_lounge.jpg", "/src/assets/hero_dining.jpg"],
+    images: [heroRoom, heroLounge, heroDining],
   },
   about: {
     title: "A Home Away From Home",
     description: "At Choudhary Girls PG, we understand the importance of a safe and comfortable environment. Managed by Binay Choudhary, our hostel is thoughtfully designed to cater to the modern needs of students and working women. From nutritious meals to high-speed internet and round-the-clock security, we ensure that your stay is completely hassle-free.",
-    image: "/src/assets/gallery_2.jpg",
+    image: gallery2,
   },
   services: [
     {
@@ -66,11 +73,11 @@ export const siteData = {
     },
   ],
   gallery: [
-    { src: "/src/assets/gallery_1.jpg", alt: "Luxury Room" },
-    { src: "/src/assets/gallery_2.jpg", alt: "Study Lounge" },
-    { src: "/src/assets/gallery_3.jpg", alt: "Hostel Facade" },
-    { src: "/src/assets/hero_room.jpg", alt: "Premium Bedroom" },
-    { src: "/src/assets/hero_lounge.jpg", alt: "Common Area" },
-    { src: "/src/assets/hero_dining.jpg", alt: "Dining Area" },
+    { src: gallery1, alt: "Luxury Room" },
+    { src: gallery2, alt: "Study Lounge" },
+    { src: gallery3, alt: "Hostel Facade" },
+    { src: heroRoom, alt: "Premium Bedroom" },
+    { src: heroLounge, alt: "Common Area" },
+    { src: heroDining, alt: "Dining Area" },
   ],
 };

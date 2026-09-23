@@ -75,7 +75,7 @@ export const siteData = {
   gallery: [
     { src: gallery1, alt: "Luxury Room" },
     { src: gallery2, alt: "Study Lounge" },
-    { src: gallery3, alt: "Hostel Facade" },
+    { src: gallery3, alt: "Premium Twin Room" },
     { src: heroRoom, alt: "Premium Bedroom" },
     { src: heroLounge, alt: "Common Area" },
     { src: heroDining, alt: "Dining Area" },

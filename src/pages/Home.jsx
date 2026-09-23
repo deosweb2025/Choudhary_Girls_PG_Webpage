@@ -1,11 +1,12 @@
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
-import About from "../components/About";
-import Services from "../components/Services";
-import Gallery from "../components/Gallery";
-import Contact from "../components/Contact";
-import Footer from "../components/Footer";
-import FloatingCallButton from "../components/FloatingCallButton";
+import React from 'react';
+import Navbar from '../components/Navbar';
+import Hero from '../components/Hero';
+import About from '../components/About';
+import Services from '../components/Services';
+import Gallery from '../components/Gallery';
+import Contact from '../components/Contact';
+import Footer from '../components/Footer';
+import FloatingCallButton from '../components/FloatingCallButton';
 
 const Home = () => {
   return (
@@ -25,4 +26,3 @@ const Home = () => {
 };
 
 export default Home;
-

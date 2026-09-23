@@ -1,19 +1,19 @@
 export const siteData = {
   company: {
     name: "Choudhary Girls PG",
-    owner: "Binay Choudhary",
-    tagline: "A Safe and Comfortable Home Away from Home",
-    description: "Premium accommodation for girls with all modern amenities in a secure environment.",
-    logo: "CGP",
+    owner: "BINAY CHOUDHURY",
+    tagline: "Premium & Secure Girls Accommodation in Kolkata",
+    description: "Experience luxury, safety, and comfort at Choudhary Girls PG. Designed specifically for female students and working professionals, our modern facility offers a perfect blend of premium living and a vibrant community.",
+    logo: "Choudhary Girls PG",
   },
   contact: {
     phone: "9007032701",
-    email: "contact@choudharygirlspg.com", // Placeholder if they have one
+    email: "contact@choudharygirlspg.com",
     whatsapp: "9007032701",
   },
   location: {
     address: "Haldirams, VIP Rd, Dhalipara, Tegharia, Rajarhat, Kolkata, West Bengal 700052",
-    mapUrl: "https://maps.google.com/?q=Haldirams,+VIP+Rd,+Dhalipara,+Tegharia,+Rajarhat,+Kolkata,+West+Bengal+700052",
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.456!2d88.435!3d22.625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89e2!2sHaldiram%27s!5e0!3m2!1sen!2sin!4v1", // Dummy embed url, but sufficient for design
   },
   social: {
     instagram: "#",
@@ -23,28 +23,54 @@ export const siteData = {
   hero: {
     eyebrow: "Welcome to",
     title: "Choudhary Girls PG",
-    description: "Experience premium, safe, and comfortable living in the heart of Kolkata.",
-    primaryCTA: "Book Now",
-    secondaryCTA: "View Facilities",
-    image: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&q=80&w=2000",
+    description: "Premium, safe, and luxurious accommodation for women in the heart of Rajarhat, Kolkata.",
+    primaryCTA: "Book a Room",
+    secondaryCTA: "View Gallery",
+    images: ["/src/assets/hero_room.jpg", "/src/assets/hero_lounge.jpg", "/src/assets/hero_dining.jpg"],
   },
   about: {
-    title: "About Us",
-    description: "We provide the best in class accommodation for girls. With modern amenities, 24/7 security, and a peaceful environment for studying and relaxing, Choudhary Girls PG is your ideal home away from home.",
-    images: ["https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800"],
+    title: "A Home Away From Home",
+    description: "At Choudhary Girls PG, we understand the importance of a safe and comfortable environment. Managed by Binay Choudhary, our hostel is thoughtfully designed to cater to the modern needs of students and working women. From nutritious meals to high-speed internet and round-the-clock security, we ensure that your stay is completely hassle-free.",
+    image: "/src/assets/gallery_2.jpg",
   },
   services: [
-    { title: "24/7 Security", description: "CCTV surveillance and secure entry systems." },
-    { title: "AC & Non-AC Rooms", description: "Comfortable rooms to suit your preferences." },
-    { title: "Nutritious Meals", description: "Hygienic and healthy food provided daily." },
-    { title: "High-Speed Wi-Fi", description: "Stay connected for work and studies." }
+    {
+      title: "24/7 Security",
+      description: "Round-the-clock CCTV surveillance and professional security personnel.",
+      icon: "ShieldCheck",
+    },
+    {
+      title: "Nutritious Meals",
+      description: "Hygienic and delicious home-cooked meals served three times a day.",
+      icon: "Utensils",
+    },
+    {
+      title: "High-Speed Wi-Fi",
+      description: "Uninterrupted, high-speed internet access for your study and work needs.",
+      icon: "Wifi",
+    },
+    {
+      title: "Housekeeping",
+      description: "Daily room cleaning and maintenance for a spotless living space.",
+      icon: "Sparkles",
+    },
+    {
+      title: "Laundry Services",
+      description: "In-house washing machines and laundry facilities available.",
+      icon: "Shirt",
+    },
+    {
+      title: "Air Conditioned",
+      description: "Spacious, well-ventilated, and fully air-conditioned rooms.",
+      icon: "Wind",
+    },
   ],
   gallery: [
-    "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800",
-    "https://images.unsplash.com/photo-1502672260266-1c1e56b10f76?auto=format&fit=crop&q=80&w=800",
-    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800"
+    { src: "/src/assets/gallery_1.jpg", alt: "Luxury Room" },
+    { src: "/src/assets/gallery_2.jpg", alt: "Study Lounge" },
+    { src: "/src/assets/gallery_3.jpg", alt: "Hostel Facade" },
+    { src: "/src/assets/hero_room.jpg", alt: "Premium Bedroom" },
+    { src: "/src/assets/hero_lounge.jpg", alt: "Common Area" },
+    { src: "/src/assets/hero_dining.jpg", alt: "Dining Area" },
   ],
-  testimonials: [],
-  faq: [],
 };
-

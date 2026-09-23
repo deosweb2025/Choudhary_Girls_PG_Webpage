@@ -1,53 +1,138 @@
-import { siteData } from "../data/siteData";
+import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { MapPin, Phone, Mail } from 'lucide-react';
+import { siteData } from '../data/siteData';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(sectionRef.current,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 75%',
+        }
+      }
+    );
+  }, []);
+
   return (
-    <section id="contact" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Contact & Location</h2>
-          <div className="w-20 h-1 bg-blue-600 mx-auto"></div>
-        </div>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100">
-          <div className="p-8 md:p-12">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h3>
-            <div className="space-y-6">
-              <div className="flex items-start">
-                <div className="bg-blue-50 p-3 rounded-full text-blue-600 mr-4">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+    <section id="contact" ref={sectionRef} className="py-24 bg-slate-900 text-white relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-rose-500 to-transparent opacity-20"></div>
+      
+      <div className="container mx-auto px-6 md:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          
+          <div>
+            <h2 className="text-sm font-bold text-rose-400 tracking-widest uppercase mb-4">Contact Us</h2>
+            <h3 className="text-4xl md:text-6xl font-script mb-8">Get In Touch</h3>
+            <p className="text-slate-400 text-lg mb-12 max-w-md">
+              Ready to secure your stay? Contact us today for bookings and inquiries. Our team is here to help you.
+            </p>
+            
+            <div className="flex flex-col gap-8">
+              <div className="flex items-start gap-6 group">
+                <div className="w-14 h-14 rounded-full bg-slate-800 flex items-center justify-center shrink-0 group-hover:bg-rose-600 transition-colors">
+                  <MapPin className="text-rose-400 group-hover:text-white transition-colors" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">Address</h4>
-                  <p className="text-gray-600 mt-1">{siteData.location.address}</p>
+                  <h4 className="text-xl font-semibold mb-2">Location</h4>
+                  <p className="text-slate-400 leading-relaxed">{siteData.location.address}</p>
                 </div>
               </div>
               
-              <div className="flex items-start">
-                <div className="bg-blue-50 p-3 rounded-full text-blue-600 mr-4">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+              <div className="flex items-start gap-6 group">
+                <div className="w-14 h-14 rounded-full bg-slate-800 flex items-center justify-center shrink-0 group-hover:bg-rose-600 transition-colors">
+                  <Phone className="text-rose-400 group-hover:text-white transition-colors" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">Phone</h4>
-                  <p className="text-gray-600 mt-1">
-                    <a href={`tel:${siteData.contact.phone}`} className="hover:text-blue-600 transition-colors">{siteData.contact.phone}</a>
-                  </p>
+                  <h4 className="text-xl font-semibold mb-2">Phone</h4>
+                  <a href={`tel:${siteData.contact.phone}`} className="text-slate-400 hover:text-white transition-colors block mb-1">
+                    +91 {siteData.contact.phone}
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-6 group">
+                <div className="w-14 h-14 rounded-full bg-slate-800 flex items-center justify-center shrink-0 group-hover:bg-rose-600 transition-colors">
+                  <Mail className="text-rose-400 group-hover:text-white transition-colors" />
+                </div>
+                <div>
+                  <h4 className="text-xl font-semibold mb-2">Email</h4>
+                  <a href={`mailto:${siteData.contact.email}`} className="text-slate-400 hover:text-white transition-colors block">
+                    {siteData.contact.email}
+                  </a>
                 </div>
               </div>
             </div>
           </div>
-          <div className="h-[400px] lg:h-auto bg-gray-200">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14732.138598717904!2d88.4283852!3d22.6151744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89e13a96860cb%3A0x805ec6db2fb5c88b!2sHaldiram&#39;s%20VIP!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
-              width="100%" 
-              height="100%" 
-              style={{ border: 0 }} 
-              allowFullScreen="" 
-              loading="lazy" 
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Google Maps Location"
-            ></iframe>
+          
+          <div className="bg-slate-800/50 backdrop-blur-md p-8 md:p-10 rounded-3xl border border-slate-700/50 shadow-2xl relative">
+            {/* Decorative background glow */}
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-rose-600/20 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <h4 className="text-2xl font-semibold mb-6 text-white">Send us a Message</h4>
+            <form className="flex flex-col gap-5 relative z-10" onSubmit={(e) => e.preventDefault()}>
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-slate-400 mb-2">Full Name</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  className="w-full bg-slate-900/50 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500 transition-all" 
+                  placeholder="Enter your name" 
+                  required 
+                />
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-slate-400 mb-2">Email Address</label>
+                  <input 
+                    type="email" 
+                    id="email" 
+                    className="w-full bg-slate-900/50 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500 transition-all" 
+                    placeholder="you@example.com" 
+                    required 
+                  />
+                </div>
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-slate-400 mb-2">Phone Number</label>
+                  <input 
+                    type="tel" 
+                    id="phone" 
+                    className="w-full bg-slate-900/50 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500 transition-all" 
+                    placeholder="+91" 
+                    required 
+                  />
+                </div>
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-slate-400 mb-2">Your Message</label>
+                <textarea 
+                  id="message" 
+                  rows="4" 
+                  className="w-full bg-slate-900/50 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500 transition-all resize-none" 
+                  placeholder="How can we help you?" 
+                  required
+                ></textarea>
+              </div>
+              <button 
+                type="submit" 
+                className="w-full bg-rose-600 hover:bg-rose-700 text-white font-semibold rounded-xl px-4 py-4 mt-2 transition-all shadow-[0_0_20px_rgba(225,29,72,0.2)] hover:shadow-[0_0_25px_rgba(225,29,72,0.4)] hover:-translate-y-1"
+              >
+                Send Message
+              </button>
+            </form>
           </div>
+
         </div>
       </div>
     </section>
@@ -55,4 +140,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
